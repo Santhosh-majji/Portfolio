@@ -66,7 +66,7 @@
 
 .projects-subtitle {
   font-size: 16px;
-  color: rgba(255, 255, 255, 0.7);
+  color: var(--text-gray);
   max-width: 500px;
   margin: 0 auto 32px;
   line-height: 1.5;
@@ -84,7 +84,7 @@
   background: transparent;
   border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 25px;
-  color: rgba(255, 255, 255, 0.7);
+  color: var(--text-gray);
   font-size: 14px;
   font-weight: 500;
   cursor: pointer;
@@ -257,7 +257,7 @@
 .project-description {
   font-size: 13px;
   line-height: 1.5;
-  color: rgba(255, 255, 255, 0.7);
+  color: var(--text-gray);
   margin: 0 0 12px 0;
   display: -webkit-box;
   -webkit-line-clamp: 2;
@@ -273,7 +273,7 @@
 
 .tech-tag {
   background: rgba(255, 255, 255, 0.05);
-  color: rgba(255, 255, 255, 0.8);
+  color: var(--text-gray);
   padding: 4px 8px;
   border-radius: 8px;
   font-size: 11px;
@@ -307,7 +307,7 @@
 
 .cta-content p {
   font-size: 14px;
-  color: rgba(255, 255, 255, 0.7);
+  color: var(--text-gray);
   margin-bottom: 20px;
 }
 

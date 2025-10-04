@@ -214,16 +214,14 @@
 
 .hero-visual {
   position: absolute;
-  top: 80px;
+  top: 100px;
   right: 0;
   width: 70%;
-  height: calc(100% - 80px);
+  height: calc(100% - 100px);
   background-image: url('../../images/officpic.jpg');
   background-size: cover;
   background-position: center;
-  background-attachment: fixed;
-  will-change: transform;
-  transform: translateZ(0);
+  background-repeat: no-repeat;
   z-index: 0;
 }
 
@@ -261,17 +259,20 @@
   .hero-content {
     text-align: left;
     padding-left: 0;
+    z-index: 3;
+    position: relative;
   }
   
   .hero-visual {
     width: 100%;
-    height: 50%;
-    top: 50%;
+    height: 100%;
+    top: 0;
     right: 0;
+    opacity: 0.4;
   }
   
   .hero-visual::before {
-    background: linear-gradient(180deg, transparent 0%, var(--primary-black) 100%);
+    background: linear-gradient(90deg, var(--primary-black) 0%, transparent 70%);
   }
 }
 
@@ -283,6 +284,8 @@
   .hero-content {
     text-align: left;
     padding-left: 0;
+    z-index: 3;
+    position: relative;
   }
   
   .hero-title {
@@ -309,8 +312,13 @@
   
   .hero-visual {
     width: 100%;
-    height: 40%;
-    top: 60%;
+    height: 100%;
+    top: 0;
+    opacity: 0.3;
+  }
+  
+  .hero-visual::before {
+    background: linear-gradient(90deg, var(--primary-black) 0%, transparent 60%);
   }
 }
 
@@ -348,6 +356,17 @@
   
   .stat-label {
     font-size: 11px;
+  }
+  
+  .hero-visual {
+    width: 100%;
+    height: 100%;
+    top: 0;
+    opacity: 0.2;
+  }
+  
+  .hero-visual::before {
+    background: linear-gradient(90deg, var(--primary-black) 0%, transparent 50%);
   }
 }
 

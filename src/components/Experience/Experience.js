@@ -1,7 +1,7 @@
 import React, { useState, useRef } from "react";
-import { motion, useScroll, useInView } from "framer-motion";
+import { motion, useInView } from "framer-motion";
 import "./Experience.css";
-
+import logo from '../../images/logo.png'
 // Simple SVG icons
 const BriefcaseIcon = () => (
   <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
@@ -130,8 +130,26 @@ const ExperienceCard = ({ job, index }) => {
         <motion.div className="card-header" variants={itemVariants}>
           <div className="position-title">{job.position}</div>
           <div className="role-summary">{job.summary}</div>
-          <div className="company-name">{job.company}</div>
-          <div className="company-description">{job.companyDesc}</div>
+          <div className="company-info">
+            {job.logo && (
+              <img src={job.logo} alt={`${job.company} logo`} className="company-logo" />
+            )}
+            <div className="company-details">
+              {job.website ? (
+                <a href={job.website} target="_blank" rel="noopener noreferrer" className="company-name-link">
+                  {job.company}
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
+                    <polyline points="15,3 21,3 21,9"/>
+                    <line x1="10" y1="14" x2="21" y2="3"/>
+                  </svg>
+                </a>
+              ) : (
+                <div className="company-name">{job.company}</div>
+              )}
+              <div className="company-description">{job.companyDesc}</div>
+            </div>
+          </div>
         </motion.div>
         
         {/* Card metadata */}
@@ -241,19 +259,35 @@ const ExperienceCard = ({ job, index }) => {
 const Experience = () => {
   const sectionRef = useRef(null);
   const isInView = useInView(sectionRef, { once: false, amount: 0.1 });
-  
-  const { scrollYProgress } = useScroll({
-    target: sectionRef,
-    offset: ["start end", "end start"]
-  });
 
   const jobs = [
     {
+      year: "2025 - Present",
+      position: "Frontend Developer",
+      summary: "Leading frontend development with React ecosystem, advanced animations, and scalable component libraries for high-performance applications.",
+      company: "Farmkrate",
+      website: "https://www.farmkrate.in/",
+      logo: logo,
+      companyDesc: "Patented agri-tech platform connecting farmers & buyers for efficient supply chains. Revolutionizing agriculture with transparency and innovative technology solutions.",
+      location: "Visakhapatnam, India",
+      accomplishments: [
+        "Developing high-performance web applications using React, Redux, and Context API with 60% improved loading speeds",
+        "Implementing advanced animations and interactive UI components with Framer Motion and GSAP for enhanced user engagement",
+        "Leading migration of legacy applications to modern React ecosystem, resulting in 35% improvement in code maintainability",
+        "Collaborating with UX designers to create intuitive, accessible interfaces that increased user satisfaction scores by 45%",
+        "Building reusable component libraries and design systems for consistent UI across multiple projects",
+        "Mentoring junior developers and conducting code reviews to maintain high code quality standards"
+      ],
+      skills: ["React", "TypeScript", "Next.js", "JavaScript", "Material-UI", "Tailwind CSS", "Redux", "Context API", "Framer Motion", "GSAP", "Webpack", "Performance Optimization"]
+    },
+    {
       year: "2022 - 2025",
       position: "Junior Software Developer",
-      summary: "Building modern web applications with React.js and Material-UI",
+      summary: "Specialized in building modern web applications with React.js, Material-UI, and advanced frontend technologies for enterprise solutions.",
       company: "Yatayati Info Solutions Pvt Ltd",
-      companyDesc: "Developed comprehensive HRMS and PMIT platforms with modern React architecture. Focused on creating responsive dashboards and SEO-optimized web applications that significantly improved user engagement and operational efficiency.",
+      website: "https://yatayati.com/",
+      logo: "https://yatayati.com/favicon.ico",
+      companyDesc: "Visionary collective crafting specialized apps, web solutions, embedded systems, and AI/ML innovations. Four transformative years redefining possibilities with remarkable technological advancements.",
       location: "Hyderabad, India",
       accomplishments: [
         "Developed comprehensive HRMS using React.js and Material-UI with employee attendance, leave tracking, and performance management modules",
@@ -268,9 +302,11 @@ const Experience = () => {
     {
       year: "2025 - Present",
       position: "Frontend Developer",
-      summary: "Creating high-performance React applications with advanced animations",
-      company: "Framkrate",
-      companyDesc: "Leading frontend development with modern React ecosystem and advanced animation libraries. Building scalable component libraries and mentoring development teams while implementing cutting-edge UI/UX solutions.",
+      summary: "Leading frontend development with React ecosystem, advanced animations, and scalable component libraries for high-performance applications.",
+      company: "Farmkrate",
+      website: "https://www.farmkrate.in/",
+      logo: logo,
+      companyDesc: "Patented agri-tech platform connecting farmers & buyers for efficient supply chains. Revolutionizing agriculture with transparency and innovative technology solutions.",
       location: "Visakhapatnam, India",
       accomplishments: [
         "Developing high-performance web applications using React, Redux, and Context API with 60% improved loading speeds",

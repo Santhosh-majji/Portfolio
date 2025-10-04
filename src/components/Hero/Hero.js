@@ -94,9 +94,8 @@ const Hero = () => {
             </div>
 
             <p className="hero-description">
-              Experienced Frontend Developer with 2+ years building responsive web applications using React, JavaScript, and modern frameworks. 
-              Proven track record of delivering high-performance solutions that improve user engagement and business metrics.
-            </p>
+              Hey there!I’m a Frontend Developer with 2+ years building responsive web applications using React, JavaScript, and modern frameworks.I love turning creative ideas into smooth 
+I care about performance, design, and creating experiences users actually love.            </p>
 
             <div className="hero-actions">
               <motion.button 
