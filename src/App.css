@@ -1,0 +1,86 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --primary-black: #0a0a0a;
+  --secondary-black: #1a1a1a;
+  --accent-gold: #d4af37;
+  --text-white: #ffffff;
+  --text-gray: #a0a0a0;
+  --gradient-gold: linear-gradient(135deg, #d4af37 0%, #ffd700 100%);
+  --gradient-dark: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
+  --shadow-luxury: 0 20px 60px rgba(212, 175, 55, 0.1);
+  --border-luxury: 1px solid rgba(212, 175, 55, 0.2);
+}
+
+[data-theme="light"] {
+  --primary-black: #ffffff;
+  --secondary-black: #f8f9fa;
+  --text-white: #1a1a1a;
+  --text-gray: #666666;
+  --gradient-dark: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+  --shadow-luxury: 0 20px 60px rgba(0, 0, 0, 0.1);
+  --border-luxury: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  background: var(--primary-black);
+  color: var(--text-white);
+  line-height: 1.6;
+  overflow-x: hidden;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.App {
+  min-height: 100vh;
+  position: relative;
+}
+
+/* Luxury scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--secondary-black);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--accent-gold);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #ffd700;
+}
+
+/* Premium typography */
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 600;
+  letter-spacing: -0.02em;
+}
+
+.section {
+  padding: 120px 0;
+  position: relative;
+}
+
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 40px;
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 0 20px;
+  }
+  
+  .section {
+    padding: 80px 0;
+  }
+}
